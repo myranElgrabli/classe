@@ -1,0 +1,40 @@
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+    int v=10,ay=11,z=12;
+    System.out.println(v);
+    System.out.println(ay);
+    System.out.println(z);
+    
+    float w=5.5F;
+    int d=2;
+    System.out.println(w+"   "+d); 
+
+
+
+       char ch1='m';
+        char av='y';
+        char p='r';
+       char  s='a';
+        char g='n';
+    System.out.println(ch1+av+p+s+g);
+    
+    
+    int k=5,l=10;
+    System.out.println(k+"is less then"+l);
+
+    int m=10,e=20,q=30;
+    System.out.println((m+e+q)/3);
+   
+
+    int ak=3,b=4,c=5;
+    System.out.println("ak="+ak+" b="+b+" c="+(c*=5));
+
+   int x=3;
+    int y= (x*2)+5;
+    System.out.println(y);
+
+    int hours=12;
+    System.out.println("I like to study computer science "+"and therefore ready to invest "+hours+" hours a day for practice.");
+  }
+}
