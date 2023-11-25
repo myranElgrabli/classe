@@ -1,0 +1,22 @@
+mport java.util.Scanner;
+
+public class Yud2
+{
+	
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int name,school,number;
+		System.out.println("My name is");
+		name=scan.nextInt();
+		System.out.println("My school is");
+		school=scan.nextInt();
+		System.out.println("The number of subjects i study is");
+		number=scan.nextInt();
+		
+		System.out.println("My name is myran elgrabli, My school is mekif vav, The number of subjects i study is 12");
+		
+		
+	}
+
+}
