@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Yud2
+{
+	
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int a1,a5,n,d,a10;
+		System.out.println("enter a1:");
+		a1=scan.nextInt();
+		System.out.println("enter d");
+		d=scan.nextInt();
+		a5=a1+(5-1)*d;
+		a10=a1+(10-1)*d;
+		System.out.println(a5);
+		System.out.println(a10);
+		
+		
+	}
+
+}
