@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Yud2
+{
+	
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int num1,num2,error;
+		System.out.println("enter number 1:");
+		num1=scan.nextInt();
+		System.out.println("enter number 2:");
+		num2=scan.nextInt();
+		error=scan.nextInt();
+		if (num1>0 && num2>0);
+		System.out.println(true);
+		else
+			System.out.println(error);
+			if (num1<0 && num2<0);
+		System.out.println(false);
+		else
+			
+
+			
+
+	}
