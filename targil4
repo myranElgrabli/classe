@@ -6,16 +6,15 @@ public class Yud2
 	public static void main(String[] args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int gr1,gr2,gr3,aver;
+		int gr1,gr2,gr3,average;
 		System.out.println("enter grade1:");
 		gr1=scan.nextInt();
 		System.out.println("enter grade2:");
 		gr2=scan.nextInt();
 		System.out.println("enter grade3:");
 		gr3=scan.nextInt();
-		aver=scan.nextInt();
-		aver=(gr1+gr2+gr3)/3;
-		System.out.println(aver);
+		average=(gr1+gr2+gr3)/3;
+		System.out.println(average);
 
 		
 		
