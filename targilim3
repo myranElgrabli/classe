@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		int number1, number2;
+		System.out.println("enter number1:");
+        number1=scan.nextInt();
+		System.out.println("enter number2:");
+        number2=scan.nextInt();
+        if (number1 < number2) {
+		System.out.println("the smallest number is "+number1);
+        } else if (number2 < number1) {
+		System.out.println("the smallest number is "+number2);
+        }  
+
+	}
+
+}
+
+
