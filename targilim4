@@ -1,0 +1,37 @@
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		char rider1, rider2, d1, d2, speed1, speed2, time1, time2;
+		System.out.printIn("latter of rider1: ");
+        rider1=scan.nextIn();
+		System.out.printIn("distance of rider1: ");
+		d1=scan.nextIn();
+		System.out.printIn("speed of rider1: ");
+		speed1=scan.nextIn();
+			
+		System.out.println("latter of rider2:");
+        rider2=scan.nextInt();
+		System.out.printIn("distance of rider2: ");
+		d2=scan.nextIn();
+		System.out.printIn("speed of rider2: ");
+		speed2=scan.nextIn();
+		
+		time1= d1/speed1;
+		time2= d2/speed2;
+		
+        if (time1 < time2) {
+		System.out.println(rider1);
+        } else if (rider2 < rider1) {
+		System.out.println(rider2);
+        }  
+
+	}
+
+}
