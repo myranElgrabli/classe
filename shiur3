@@ -1,0 +1,230 @@
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		int number;
+		System.out.println("enter youre number:");
+        number=scan.nextInt();
+        if (number > 0) {
+		System.out.println("positive");
+        } else if (number < 0) {
+		System.out.println("negative");
+        }else {
+    		System.out.println("the number is zero");
+        }  
+
+	}
+
+}
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		int number1, number2;
+		System.out.println("enter number1:");
+        number1=scan.nextInt();
+		System.out.println("enter number2:");
+        number2=scan.nextInt();
+        if (number1 < number2) {
+		System.out.println("the smallest number is "+number1);
+        } else if (number2 < number1) {
+		System.out.println("the smallest number is "+number2);
+        }  
+
+	}
+
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		char rider1, rider2, d1, d2, speed1, speed2, time1, time2;
+		System.out.printIn("latter of rider1: ");
+        rider1=scan.nextIn();
+		System.out.printIn("distance of rider1: ");
+		d1=scan.nextIn();
+		System.out.printIn("speed of rider1: ");
+		speed1=scan.nextIn();
+
+		System.out.println("latter of rider2:");
+        rider2=scan.nextInt();
+		System.out.printIn("distance of rider2: ");
+		d2=scan.nextIn();
+		System.out.printIn("speed of rider2: ");
+		speed2=scan.nextIn();
+
+		time1= d1/speed1;
+		time2= d2/speed2;
+
+        if (time1 < time2) {
+		System.out.println(rider1);
+        } else if (rider2 < rider1) {
+		System.out.println(rider2);
+        }  
+
+	}
+
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int gr1,gr2,gr3,aver;
+		int gr1,gr2,gr3,average;
+		System.out.println("enter grade1:");
+		gr1=scan.nextInt();
+		System.out.println("enter grade2:");
+		gr2=scan.nextInt();
+		System.out.println("enter grade3:");
+		gr3=scan.nextInt();
+		aver=scan.nextInt();
+		aver=(gr1+gr2+gr3)/3;
+		System.out.println(aver);
+		average=(gr1+gr2+gr3)/3;
+		System.out.println(average);
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int a1,a5,n,d,a10;
+		System.out.println("enter a1:");
+		a1=scan.nextInt();
+		System.out.println("enter d");
+		d=scan.nextInt();
+		a5=a1+(5-1)*d;
+		a10=a1+(10-1)*d;
+		System.out.println(a5);
+		System.out.println(a10);
+
+
+	}
+
+}
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+		int unit;
+		int complete,remainder;
+		Scanner scan=new Scanner(System.in);
+        System.out.println("Enter your number:");
+        unit=scan.nextInt();
+        if (unit > 0 && unit < 10)
+        	System.out.println(1.2*unit);
+        else
+        	if (unit ==10)
+        		System.out.println(10);
+        	else
+        		if (unit > 10 && unit < 54)
+        		{
+        			complete=unit/10;
+        			remainder=unit%10;
+        			System.out.println(+(10*complete)+(1.2*remainder));
+        		}
+        		else
+        			if (unit==54)
+        				System.out.println(50);
+        			else
+        				if (unit>54&&unit<108)
+        				{
+        					complete=(unit-54)/10;
+        					remainder=(unit-54)%10;
+        					System.out.println(50+(complete*10)+(remainder*1.2));
+        				}
+                         else
+        					if(unit==108)
+        						System.out.println(100);
+        					else
+        						System.out.println("Errore");
+
+	}
+
+}
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		System.out.println("enter your number:");
+        int num=scan.nextInt();
+        int yehidot, dozent, dozent2, hundreds;
+        
+        yehidot=num%10;
+        dozent=num/10;
+        dozent2=dozent%10;
+        hundreds=num/100;
+		System.out.println(yehidot+dozent2+hundreds);
+
+		 int number=(yehidot+dozent2+hundreds);
+		 if (number%2==0)
+			 System.out.println("the number is even");
+		 else
+			 System.out.println("the number is odd");
+			 
+        
+	}
+
+}
+
+
+
