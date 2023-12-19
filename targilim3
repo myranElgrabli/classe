@@ -51,3 +51,36 @@ public class Yud2
 
 
 
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		String word;
+		
+		System.out.println("enter word with 3 letters:");
+        word=scan.nextLine();
+
+        char letter1=word.charAt(0);
+        char letter2=word.charAt(1);
+        char letter3=word.charAt(2);
+        
+        if (letter1==letter3)
+        	System.out.println(true);
+        else
+        	System.out.println(false);
+        
+        
+
+     }  
+
+}
+
