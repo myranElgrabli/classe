@@ -24,3 +24,30 @@ public class Yud2
 }
 
 
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		String mshpat;
+		
+		System.out.println("enter sentence between 4 words");
+        mshpat=scan.nextLine();
+
+      
+        int size=mshpat.length();
+		System.out.println(size);
+
+     }  
+
+}
+
+
+
