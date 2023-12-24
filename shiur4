@@ -168,3 +168,31 @@ public class Yud2
 
 }
 
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+        
+        int x1,x2,y1,y2;
+        System.out.println("enter the x of the first point");
+        System.out.println("enter the y of the first point");
+        System.out.println("enter the x of the secend point");
+        System.out.println("enter the y of the secend point");
+        
+        Random r=new Random();
+        num=r.nextInt(101);   	    
+
+     }  
+
+}
