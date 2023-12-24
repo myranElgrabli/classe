@@ -127,3 +127,44 @@ public class Yud2
 
 
 
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		String word;
+		
+		System.out.println("enter word with 4 chars:");
+        word=scan.nextLine();
+
+        char letter1=word.charAt(0);
+        char letter2=word.charAt(1);
+        char letter3=word.charAt(2);
+        char letter4=word.charAt(3);
+        
+        if (letter1== 'a' ||letter1== 'u'||letter1== 'o' ||letter1== 'e' ||letter1== 'i')
+    		letter1=('*');
+        if (letter2== 'a' ||letter2== 'u'||letter2== 'o' ||letter2== 'e' ||letter2== 'i')
+    		letter2=('*');
+        if (letter3== 'a' ||letter3== 'u'||letter3== 'o' ||letter3== 'e' ||letter3== 'i')
+    		letter3=('*');
+        if (letter4== 'a' ||letter4== 'u'||letter4== 'o' ||letter4== 'e' ||letter4== 'i')
+    		letter4=('*');
+    	System.out.println(letter1+""+letter2+""+letter3+""+letter4);
+        	    
+
+
+     }  
+
+}
+
