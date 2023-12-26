@@ -237,3 +237,35 @@ public class Yud2
 
 }
 
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+        
+
+        System.out.println("enter radios");
+        int radios=scan.nextInt();
+        double shetah=Math.pow((3.14*radios),2);
+        
+        System.out.println("the shetah is "+shetah);
+        System.out.println("the hekef is "+2*radios*3.14);
+        
+        
+        
+
+     }  
+
+}
+
