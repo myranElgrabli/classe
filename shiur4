@@ -173,6 +173,38 @@ public class Yud2
 
 
 
+import java.util.Random;
+public class Yud2
+{
+ public static void main(String []args)
+ {
+ int num;
+ Random r=new Random();
+ num=r.nextInt(101); 
+ if (num<10) 
+	 System.out.println("one digit number");
+ if (9<num) 
+	 System.out.println("two digit number");
+ 
+ if (num%2==0)
+	 System.out.println("number divisible by 2");
+ if (num%3==0)
+	 System.out.println("number divisible by 3");
+ System.out.println(num);
+ 
+  
+        
+
+     }  
+
+}
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 
@@ -186,13 +218,22 @@ public class Yud2
         
         int x1,x2,y1,y2;
         System.out.println("enter the x of the first point");
+        x1=scan.nextInt();
         System.out.println("enter the y of the first point");
+        y1=scan.nextInt();
         System.out.println("enter the x of the secend point");
+        x2=scan.nextInt();
         System.out.println("enter the y of the secend point");
+        y2=scan.nextInt();
         
-        Random r=new Random();
-        num=r.nextInt(101);   	    
+        double radios=Math.pow(x1-x2,2);
+        double radios1=Math.pow(y1-y2,2);
+        double shoresh=Math.sqrt(radios+radios1);
+        System.out.println("the radios is "+shoresh);
+       
+        
 
      }  
 
 }
+
