@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		String mila1, mila2;
+		
+	    System.out.println("enter first sentenc");  
+        mila1=scan.nextLine();
+        
+		System.out.println("enter secend sentenc");
+        mila2=scan.nextLine();
+
+      
+        int size1=mila1.length();
+        int size2=mila2.length();
+		
+        
+		if (size1>size2)
+			System.out.println(mila1);
+			else	 
+			     if (size2>size1) {
+			       System.out.println(mila2);
+			     }
+
+		char char1=mila1.charAt(1); 
+		char char2=mila2.charAt(1); 
+		
+		if (char1==char2) {
+			 System.out.println(true); 
+		} else if  (char1!=char2) {
+			 System.out.println(false);}
+			
+
+     }  
+
+}
+
