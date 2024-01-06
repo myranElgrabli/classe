@@ -10,7 +10,7 @@ public class Yud2
 	{
 
 		Scanner scan=new Scanner(System.in);
-		int number;
+		int number; 
 		System.out.println("enter youre number:");
         number=scan.nextInt();
         if (number > 0) {
