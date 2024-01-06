@@ -117,3 +117,38 @@ public class Yud2
 
 }
 
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		
+	    System.out.println("enter first subject ");  
+        String sub1=scan.nextLine();
+        
+	    System.out.println("enter secend subject ");  
+        String sub2=scan.nextLine();
+       
+        
+ 	    System.out.println("enter first grade");  
+        int gra1=scan.nextInt();
+       
+	    System.out.println("enter secend grade");
+	    int gra2=scan.nextInt();
+
+		if (gra1>gra2)
+			System.out.println(gra1);
+		else if (gra2>gra1)
+			       System.out.println(gra2);
+	    
+
+     }  
+
+}
+
