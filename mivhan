@@ -40,3 +40,36 @@ public class Yud2
 
 }
 
+
+
+
+import java.util.Random;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		
+		Random n=new Random();
+		boolean flag=true;
+		int min = 100;
+		int max = 1000;
+		int randomnum = n.nextInt(max-min) + min;
+	    System.out.println(randomnum);
+	    
+	    if (randomnum%100==randomnum%10)
+	    {
+		    System.out.println(flag);
+	    }
+	    else
+	    {
+	    	flag=false;
+		    System.out.println(flag);
+	    }
+
+	    	
+     }  
+
+}
