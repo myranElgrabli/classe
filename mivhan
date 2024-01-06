@@ -43,6 +43,8 @@ public class Yud2
 
 
 
+
+
 import java.util.Random;
 
 public class Yud2
@@ -73,3 +75,45 @@ public class Yud2
      }  
 
 }
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Yud2
+{
+
+	public static void main(String[] args)
+	{
+
+		Scanner scan=new Scanner(System.in);
+		
+	    System.out.println("enter t1");  
+         double t1=scan.nextInt();
+        
+ 	    System.out.println("enter v1");  
+        int v1=scan.nextInt();
+        
+	    System.out.println("enter t2");  
+        double t2=scan.nextInt();
+       
+	    System.out.println("enter v2");
+	    int v2=scan.nextInt();
+        
+	    boolean ans=true;
+	    
+		if (60==t1*v1 && 60==t2*v2)
+			System.out.println(ans);
+			else	 
+			     ans=false;
+			       System.out.println(ans);
+			     
+
+
+     }  
+
+}
+
