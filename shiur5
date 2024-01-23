@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Tester
+{
+ public static void f1()
+ {
+	 Scanner scan=new Scanner(System.in);
+	 System.out.println("enter your name"); 
+     String name=scan.next();
+     System.out.println("hello "+name);
+ } 
+ 
+ public static void f2(int num)
+ { 
+   int num1=num/5;
+   System.out.println(num1);
+ }
+ 
+ 
+ public static int f3(int num1,int num2)
+ { 
+   int num=num1*num2;
+   return (num);
+ }
+ 
+ 
+ public static void f4(int num1,int num2,int num3)
+ { 
+	 
+   int num=num1+num2+num3;
+   System.out.println(num/3);
+ }
+ 
+ public static void f5(int radios)
+ { 
+
+	 double shetah=Math.pow((3.14*radios),2);
+      System.out.println("the shetah is "+shetah);
+      System.out.println("the hekef is "+2*radios*3.14);
+ }
+ 
+ public static double f6(double a,double b)
+ { 
+
+	 double A=Math.pow((a),2);
+	 double B=Math.pow((b),2);
+	 double C=A+B;
+	 return C;
+ }
+ 
+ 
+ public static void f7(char letter1,char letter2,char letter3)
+ { 
+	 
+     System.out.println(""+letter3+letter2+letter1);
+ }
+ 
+ public static void main(String[] args)
+ {
+     // f1();
+    //  f2(20);
+     // System.out.println(f3(2,5));
+    //  f4(2,5,5);
+    //  f5(20);
+     // f6(5,10);
+      f7('f','d','y');
+ }
+}
