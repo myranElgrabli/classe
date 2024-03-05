@@ -20,8 +20,6 @@ public static void f1()
 			 System.out.println(avg);
 	  }
 
-
-
 	 public static void f2()
 	 { 
            String str;
@@ -34,9 +32,6 @@ public static void f1()
 	  }while (str.equals("enter")==false);
 		 System.out.println(count);
 	  }
-	 
-	 
-	 	 
 	 
 	 public static void f3(int code)
 	 { 
@@ -59,10 +54,6 @@ public static void f1()
 			
 	  }
 	 
-	
- 
-	 
-	 
 	 public static void f4(String str )
 	 { 
 		for (i=0; i<str.length()/2; i++);
@@ -74,10 +65,7 @@ public static void f1()
 		}
 	  }
 	 
-	 
-	 
-	 
-	 
+		 
 	 public static void f5(int num )
 	 { 
 	     System.out.println("the numbers amithalkim in "+num+":");
@@ -88,9 +76,7 @@ public static void f1()
 	    			System.out.print(",");
 	    }	
 	  }
-	 } 
-	
-	  
+	 }   
 	  
 	 public static void f6()
 	 {
@@ -102,10 +88,6 @@ public static void f1()
 			 System.out.println();
 		 }
 	 }
- 
-
- 
-
 	 
 	 public static void f7()
 	 {
@@ -124,7 +106,14 @@ public static void f1()
 		 }
 			System.out.println(min+", "+max); 
 	 }
-	 
 
-	 
-	
+	 public static void f9(int num1,int num2)
+	 { 
+		 int i,sum=0;
+		 for (i=0;i<num2;i++)
+		 	 sum=num1+sum;
+		 System.out.println(sum); 
+	 }
+
+	  
+ 
