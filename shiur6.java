@@ -115,5 +115,18 @@ public static void f1()
 		 System.out.println(sum); 
 	 }
 
+
+
+		 
+	 public static void f13(int a1, int d, int n)
+	 { 
+		 int i,an;
+		 for (i=1;i<=n;i++) {
+		 	 an=a1+(i-1)*d;
+		 	System.out.print(an+","); 
+		 }
+	 }
+
 	  
+ 
  
