@@ -129,4 +129,36 @@ public static void f1()
 
 	  
  
+ 	 
+	 public static void f20()
+	 { 
+		 int i;
+		 int maxMath=0;
+		 int maxEnglish=0;
+		 double avg1, avg2;
+		 Scanner scan=new Scanner(System.in);
+		 for (i=0;i<3;i++)
+		 {
+			  System.out.print("your name is");
+		      int name=scan.nextInt();
+			  System.out.print("your math grade is");
+		      int math=scan.nextInt();
+			  System.out.print("your english grade is");
+		      int english=scan.nextInt();
+		      
+		      if (math>maxMath)
+		    	  maxMath=math;
+		      if (english>maxEnglish)
+		    	  maxEnglish=english;
+		      if (maxEnglish<maxMath)
+				  System.out.print("the bigest grade is"+name);
+		      else 
+				  System.out.print("the bigest grade is"+name);
+		      
+		      
+	  }
+
+	 }
  
+ 
+	 
