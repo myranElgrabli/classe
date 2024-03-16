@@ -36,3 +36,31 @@ public static void f2(int[] arr)
 }
 
 
+
+
+public static void f3(int[] arr)
+{
+	int maxG,minG;
+	if ((arr[0]>0)&&(arr[0]<arr.length))
+		arr[0]=maxG;
+	if ((arr[1]>arr[0])&&(arr[1]<arr.length))
+		arr[1]=maxG;
+	if ((arr[2]>arr[1])&&(arr[2]<arr.length))
+		arr[2]=maxG;
+      System.out.println("the biggest grade is"+maxG); 
+      
+  	if ((arr[0]>0)&&(arr[0]<arr.length))
+		arr[0]=minG;
+	if ((arr[1]<arr[0])&&(arr[1]<arr.length))
+		arr[1]=minG;
+	if ((arr[2]<arr[1])&&(arr[2]<arr.length))
+		arr[2]=minG;
+      System.out.println("the smallest grade is"+minG); 
+}
+
+
+
+	 public static void main(String[] args) {
+	
+	 int [] arr= {10,20,30};
+}
