@@ -64,3 +64,55 @@ public static void f3(int[] arr)
 	
 	 int [] arr= {10,20,30};
 }
+
+
+
+
+
+
+
+
+
+
+
+import java.util.Random;
+public class Tester1 
+{
+
+	public static void main(String[] args) 
+	{
+		AP ap1 = new AP(2,1);
+		ap1.pgs();
+		int x = ap1.mc(5);
+		System.out.println(x);		
+		int y= ap1.cn(5);
+		System.out.println(y);	
+	}
+	
+	public static void arr(int rows, int c)
+	{
+		int[][] arr= new int [rows][c];
+		Random rand= new Random();
+			for(i=0;i<rows;i++)
+		{
+			for(j=0;j<c;j++)
+			{
+				arr[i][j] = rand.nextInt(101);
+			}
+		}
+			public static void p(int[][] arr)
+			{
+				for(int i=0;i<arr.length;i++)
+				{
+					for (int j=0;j<arr[i].length;j++)
+					{
+						System.out.println(arr[i][j] + " ");
+					}
+				}
+				  System.out.println();
+			}
+	}
+}
+
+
+
