@@ -166,3 +166,57 @@ public class Tester1
 	int x=ex.f4(arr);
 	System.out.print(x);
 }
+
+
+
+public class Actor
+{
+	private String name;
+	private int age;
+	private int numFilms;
+	public String getname()
+	{
+		return name;
+	}
+	public void setname(String name)
+	{
+		this.name=name;
+	}
+	public int getage ()
+	{
+		return age;
+	}
+	public void setage(int age)
+	{
+		this.age=age;
+	}
+	public int getnumFilms()
+	{
+		return numFilms;
+	}
+	
+	public void setnumFilms(int numFilms)
+	{
+		this.numFilms=numFilms;
+	}
+	public Actor(String name, int age, int numFilms)
+	{
+		this.name=name;
+		this.age=age;
+		this.numFilms=numFilms;
+	}
+	public void addFilms()
+	{
+		this.numFilms++;
+	}
+	public Actor(Actor other)
+	{
+		this.name=other.name;
+		this.age=other.age;
+		this.numFilms=other.numFilms;
+	}
+	public boolean compare (Actor other)
+	{
+		return this.numFilms> other.numFilms;
+	}
+}
