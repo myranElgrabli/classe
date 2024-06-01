@@ -159,11 +159,10 @@ public class MivchanExemple
 }
 
 
-
 public class Tester1 
 {
 	char[][] arr= { {'a','b','c','d'},{'h','i','i','k'},{'l','m','n','o'},{'p','q','r','s'} };
 	MivchanExemple ex=new MivchanExemple();
-	char x=ex.f4(arr);
+	int x=ex.f4(arr);
 	System.out.print(x);
 }
