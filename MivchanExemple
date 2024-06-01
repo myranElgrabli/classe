@@ -129,3 +129,41 @@ public class Tester1
 	
 	
 }
+
+
+
+public class MivchanExemple 
+{  	
+    	
+    	public int f4(char[][] arr)
+    	{
+    		int maxCounter=0;
+    		int index=0;
+    		for(int i=0;i<arr.length;i++)
+    		{
+    			int currentCounter=0;
+    			for(int j=0;j<arr.length;j++)
+    			{
+    				if(arr[i][j]== 'a' | arr[i][j]== 'e' | arr[i][j]== 'i' |arr[i][j]== 'o' | arr[i][j]== 'u' )
+    					currentCounter= currentCounter+1;
+    			}
+    			 if(currentCounter>maxCounter)
+    			 {
+    				 maxCounter=currentCounter;
+    				 index = i + 1;
+    			 }
+    		}
+    		return index;
+     	}
+ 	
+}
+
+
+
+public class Tester1 
+{
+	char[][] arr= { {'a','b','c','d'},{'h','i','i','k'},{'l','m','n','o'},{'p','q','r','s'} };
+	MivchanExemple ex=new MivchanExemple();
+	char x=ex.f4(arr);
+	System.out.print(x);
+}
