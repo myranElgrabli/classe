@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myran Jewelry</title>
+    <style>
+        body {
+            background-color: #FFE4E1; /* צבע רקע חדש */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: white; /* צבע לבן */
+            font-size: 3em;
+            text-align: center;
+            font-family: 'David', Arial, sans-serif; /* שינוי סוג הגופן לדוד */
+            margin-top: 20px; /* מרווח קטן מלמעלה */
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 20px;
+        }
+        .image-container button {
+            background: none;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            position: relative;
+        }
+        .image-container img {
+            width: 150px; /* גודל אחיד לכל התמונות */
+            height: auto;
+            margin: 0 10px; /* מרווחים שווים בין התמונות */
+        }
+        .image-container p {
+            font-size: 1em;
+            color: white;
+            font-family: 'David', Arial, sans-serif;
+            margin: 5px 0 0; /* מרווח קטן מעל התיאור */
+        }
+        .selected img {
+            border: 4px solid white; /* ריבוע לבן מסביב לבחירה */
+        }
+    </style>
+</head>
+<body>
+    <h1>Myran Jewelry</h1>
+    <div class="image-container">
+        <button onclick="selectItem(this)">
+            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/08/189679C01_V2_1660829816769.png.webp" alt="תכשיטי רוז גולד">
+            <p>תכשיטי רוז גולד</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/162999C01_V2_1698134348572.png.webp" alt="תכשיטי זהב">
+            <p>תכשיטי זהב</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/192999C01_V2_1698134511804.png.webp" alt="תכשיטי כסף">
+            <p>תכשיטי כסף</p>
+        </button>
+    </div>
+    <div class="image-container">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A9%D7%A8%D7%A9%D7%A8%D7%90%D7%95%D7%AA.jpg" alt="שרשראות">
+            <p>שרשראות</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A2%D7%92%D7%99%D7%9C%D7%99%D7%9D.jpg" alt="עגילים">
+            <p>עגילים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%98%D7%91%D7%A2%D7%95%D7%AA.jpg" alt="טבעות">
+            <p>טבעות</p>
+        </button>
+    </div>
+    <div class="image-container">
+        <button onclick="selectItem(this)">
+            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/08/189679C01_V2_1660829816769.png.webp" alt="פרחים">
+            <p>פרחים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/162999C01_V2_1698134348572.png.webp" alt="זירקונים">
+            <p>זירקונים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/192999C01_V2_1698134511804.png.webp" alt="פנינים">
+            <p>פנינים</p>
+        </button>
+    </div>
+    <script>
+        function selectItem(element) {
+            // מסיר את המחלקה "selected" מכל הכפתורים
+            const buttons = document.querySelectorAll('.image-container button');
+            buttons.forEach(button => button.classList.remove('selected'));
+
+            // מוסיף את המחלקה "selected" לכפתור שנבחר
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
