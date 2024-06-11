@@ -57,15 +57,15 @@
     <h1>Myran Jewelry</h1>
     <div class="image-container">
         <button onclick="selectItem(this)">
-            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/08/189679C01_V2_1660829816769.png.webp" alt="תכשיטי רוז גולד">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%A8%D7%95%D7%96%20%D7%92%D7%95%D7%9C%D7%93.jpg" alt="תכשיטי רוז גולד">
             <p>תכשיטי רוז גולד</p>
         </button>
         <button onclick="selectItem(this)">
-            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/162999C01_V2_1698134348572.png.webp" alt="תכשיטי זהב">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%96%D7%94%D7%91.jpg" alt="תכשיטי זהב">
             <p>תכשיטי זהב</p>
         </button>
         <button onclick="selectItem(this)">
-            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/192999C01_V2_1698134511804.png.webp" alt="תכשיטי כסף">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%9B%D7%A1%D7%A3.jpg" alt="תכשיטי כסף">
             <p>תכשיטי כסף</p>
         </button>
     </div>
@@ -85,15 +85,15 @@
     </div>
     <div class="image-container">
         <button onclick="selectItem(this)">
-            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/08/189679C01_V2_1660829816769.png.webp" alt="פרחים">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A8%D7%97%D7%99%D7%9D.jpg" alt="פרחים">
             <p>פרחים</p>
         </button>
         <button onclick="selectItem(this)">
-            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/162999C01_V2_1698134348572.png.webp" alt="זירקונים">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%96%D7%99%D7%A8%D7%A7%D7%95%D7%A0%D7%99%D7%9D.jpg" alt="זירקונים">
             <p>זירקונים</p>
         </button>
         <button onclick="selectItem(this)">
-            <img src="https://www.pandora-shop.co.il/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/10/192999C01_V2_1698134511804.png.webp" alt="פנינים">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D.jpg" alt="פנינים">
             <p>פנינים</p>
         </button>
     </div>
