@@ -1,0 +1,222 @@
+כפתור מתוקן
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myran Jewelry</title>
+    <style>
+        body {
+            background-color: #FFE4E1; /* צבע רקע חדש */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+        }
+        h1 {
+            color: white; /* צבע לבן */
+            font-size: 3em;
+            text-align: center;
+            font-family: 'David', Arial, sans-serif; /* שינוי סוג הגופן לדוד */
+            margin: 0; /* ביטול המרווח */
+            flex-grow: 1;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 10px;
+        }
+        .image-container button {
+            background: none;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            position: relative;
+        }
+        .image-container img {
+            width: 100px; /* גודל אחיד לכל התמונות */
+            height: auto;
+            margin: 0 10px; /* מרווחים שווים בין התמונות */
+        }
+        .image-container p {
+            font-size: 1.2em; /* גודל טקסט גדול יותר */
+            color: white;
+            font-family: 'David', Arial, sans-serif;
+            margin: 5px 0 0; /* מרווח קטן מעל התיאור */
+        }
+        .selected img, .order-button:focus, .register-button:focus {
+            border: 4px solid white; /* ריבוע לבן מסביב לבחירה */
+        }
+        .order-button, .register-button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #FFB6C1; /* צבע רקע ורוד כהה */
+            color: black; /* צבע טקסט שחור */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none; /* הסרת קו מתאר ברירת מחדל */
+        }
+        .register-button {
+            font-size: 1em; /* גודל טקסט קטן יותר */
+        }
+        .order-button {
+            margin-top: 20px; /* מרווח מעל הכפתור */
+        }
+        .modal {
+            display: none; /* מוסתר כברירת מחדל */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* רקע שקוף */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 25%; /* רבע מהמסך */
+            text-align: center;
+        }
+        .modal-content label {
+            display: block;
+            margin-top: 10px;
+            font-family: 'David', Arial, sans-serif;
+            color: black; /* צבע תווית שחור */
+        }
+        .modal-content input {
+            width: calc(100% - 20px); /* התאמת רוחב */
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Myran Jewelry</h1>
+        <button class="register-button" onclick="openModal()">הירשם לאתר</button>
+    </header>
+    <div class="image-container">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%A8%D7%95%D7%96%20%D7%92%D7%95%D7%9C%D7%93.jpg" alt="תכשיטי רוז גולד">
+            <p>תכשיטי רוז גולד</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%96%D7%94%D7%91.jpg" alt="תכשיטי זהב">
+            <p>תכשיטי זהב</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%9B%D7%A1%D7%A3.jpg" alt="תכשיטי כסף">
+            <p>תכשיטי כסף</p>
+        </button>
+    </div>
+    <div class="image-container">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A9%D7%A8%D7%A9%D7%A8%D7%90%D7%95%D7%AA.jpg" alt="שרשראות">
+            <p>שרשראות</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A2%D7%92%D7%99%D7%9C%D7%99%D7%9D.jpg" alt="עגילים">
+            <p>עגילים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%98%D7%91%D7%A2%D7%95%D7%AA.jpg" alt="טבעות">
+            <p>טבעות</p>
+        </button>
+    </div>
+    <div class="image-container">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A8%D7%97%D7%99%D7%9D.jpg" alt="פרחים">
+            <p>פרחים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%96%D7%99%D7%A8%D7%A7%D7%95%D7%A0%D7%99%D7%9D.jpg" alt="זירקונים">
+            <p>זירקונים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D.jpg" alt="פנינים">
+            <p>פנינים</p>
+        </button>
+    </div>
+    <button class="order-button">סכם הזמנה</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>הירשם לאתר</h2>
+            <form>
+                <label for="fullName">שם מלא:</label>
+                <input type="text" id="fullName" name="fullName" required><br><br>
+                
+                <label for="phone">מספר טלפון:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                
+                <label for="address">כתובת:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="email">כתובת אימייל:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <button type="submit">שלח</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function selectItem(element) {
+            // מסיר את המחלקה "selected" מכל הכפתורים
+            const buttons = document.querySelectorAll('.image-container button');
+            buttons.forEach(button => button.classList.remove('selected'));
+
+            // מוסיף את המחלקה "selected" לכפתור שנבחר
+            element.classList.add('selected');
+        }
+
+        function openModal() {
+            document.getElementById('myModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
