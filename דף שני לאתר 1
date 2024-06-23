@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סיכום הזמנה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE4E1; /* צבע רקע חדש */
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            position: relative;
+            border-radius: 20px; /* עיגול פינות */
+            height: 80vh; /* גובה הריבוע */
+            display: flex;
+            justify-content: center; /* מיקוד אופקי במרכז */
+            align-items: center; /* מיקוד אנכי במרכז */
+        }
+
+        .overlay-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px; /* עיגול פינות */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70%; /* רוחב הריבוע */
+            text-align: right;
+        }
+
+        .overlay-box h2 {
+            text-align: right;
+            margin-top: 0;
+        }
+
+        .order-details {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #000; /* צבע טקסט שחור */
+        }
+
+        .order-details-header {
+            text-align: right;
+            margin-top: 0;
+        }
+
+        .order-details-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay-box">
+            <h2 class="order-details-header">פרטי ההזמנה שלך:</h2>
+            <div class="order-details">
+                <!-- פרטים על ההזמנה יהיו כאן -->
+            </div>
+            <p class="order-details-footer">שמחים שהזמנת אצלינו!</p>
+        </div>
+    </div>
+</body>
+</html>
