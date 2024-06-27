@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myran Jewelry</title>
+    <style>
+        body {
+            background-color: #FFE4E1; /* צבע רקע חדש */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* הסתרת גלילה */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px; /* התאמת הרווחים */
+        }
+        h1 {
+            color: white; /* צבע לבן */
+            font-size: 2.5em; /* הגדלת גודל הפונט */
+            text-align: center;
+            font-family: 'David', Arial, sans-serif; /* שינוי סוג הגופן לדוד */
+            margin: 0; /* ביטול המרווח */
+            flex-grow: 1;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin: 10px 0; /* התאמת הרווחים מעל ומתחת */
+            flex-shrink: 0; /* כדי שהתמונות לא יצטמצמו */
+        }
+        .image-container button {
+            background: none;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            position: relative;
+        }
+        .image-container img {
+            width: 120px; /* הגדלת גודל התמונות */
+            height: auto;
+            margin: 0 10px; /* התאמת המרווחים בין התמונות */
+        }
+        .image-container p {
+            font-size: 1.5em; /* הגדלת גודל הטקסט */
+            color: white;
+            font-family: 'David', Arial, sans-serif;
+            margin: 10px 0 0; /* מרווח קטן מעל התיאור */
+        }
+        .selected img, .order-button:focus, .register-button:focus, .my-site-button:focus {
+            border: 2px solid white; /* ריבוע לבן מסביב לבחירה */
+        }
+        .order-button, .register-button, .my-site-button {
+            padding: 10px 20px; /* התאמת הרווחים בתוך הכפתור */
+            font-size: 1.5em; /* הגדלת גודל הפונט */
+            background-color: #FFB6C1; /* צבע רקע ורוד כהה */
+            color: black; /* צבע טקסט שחור */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none; /* הסרת קו מתאר ברירת מחדל */
+            margin-top: 10px;
+            width: 200px; /* גודל כפתור אחיד */
+            text-align: center; /* יישור טקסט למרכז */
+        }
+        .register-button {
+            font-size: 1.5em; /* גודל טקסט תואם */
+        }
+        .order-button {
+            margin-top: 10px; /* מרווח מעל הכפתור */
+        }
+        .modal {
+            display: none; /* מוסתר כברירת מחדל */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* רקע שקוף */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 30%; /* רוחב המודאל */
+            text-align: center;
+        }
+        .modal-content label {
+            display: block;
+            margin-top: 10px;
+            font-family: 'David', Arial, sans-serif;
+            color: black; /* צבע תווית שחור */
+            font-size: 1.2em; /* גודל תווית */
+        }
+        .modal-content input {
+            width: calc(100% - 20px); /* התאמת רוחב */
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .side-box {
+            display: none;
+            position: fixed;
+            top: 80px; /* הורדת המלבן נמוך יותר */
+            right: 20px;
+            width: 300px; /* רוחב צד הקופסא */
+            padding: 20px; /* התאמת הרווחים */
+            background-color: rgba(255, 255, 255, 0.8); /* צבע רקע לבן עם שקיפות */
+            color: black;
+            border: 2px solid #888;
+            z-index: 2;
+            direction: rtl; /* טקסט מימין לשמאל */
+            background-image: url('file:///C:/Users/Myran%20elgrabli/Desktop/תמונת%20רקע%20לכפתור.jpg'); /* הוספת תמונת רקע */
+            background-size: cover; /* כיסוי מלא של הרקע */
+        }
+        .side-box .close {
+            color: #aaa;
+            float: left;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .side-box .close:hover,
+        .side-box .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer.
+        }
+        .side-box p {
+            margin-right: 10px;
+            position: relative;
+            z-index: 2; /* כדי לוודא שהטקסט מעל הרקע */
+            font-size: 1.2em; /* גודל טקסט תואם */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Myran Jewelry</h1>
+        <div class="buttons-container">
+            <button class="register-button" onclick="openModal()">הירשם לאתר</button>
+            <button class="my-site-button" onclick="openMySite()">האתר שלי</button>
+        </div>
+    </header>
+    <div class="image-container" data-row="1">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%A8%D7%95%D7%96%20%D7%92%D7%95%D7%9C%D7%93.jpg" alt="תכשיטי רוז גולד">
+            <p>תכשיטי רוז גולד</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%96%D7%94%D7%91.jpg" alt="תכשיטי זהב">
+            <p>תכשיטי זהב</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%9B%D7%A1%D7%A3.jpg" alt="תכשיטי כסף">
+            <p>תכשיטי כסף</p>
+        </button>
+    </div>
+    <div class="image-container" data-row="2">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A9%D7%A8%D7%A9%D7%A8%D7%90%D7%95%D7%AA.jpg" alt="שרשראות">
+            <p>שרשראות</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A2%D7%92%D7%99%D7%9C%D7%99%D7%9D.jpg" alt="עגילים">
+            <p>עגילים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%98%D7%91%D7%A2%D7%95%D7%AA.jpg" alt="טבעות">
+            <p>טבעות</p>
+        </button>
+    </div>
+    <div class="image-container" data-row="3">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%20%D7%96%D7%99%D7%A8%D7%A7%D7%95%D7%A0%D7%99%D7%9D.jpg" alt="זירקונים">
+            <p>זירקונים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D.jpg" alt="פנינים">
+            <p>פנינים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%A4%D7%A8%D7%97%D7%99%D7%9D.jpg" alt="פרחים">
+            <p>פרחים</p>
+        </button>
+    </div>
+    <button class="order-button" onclick="goToSecondPage()">ההזמנה שלך</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>הרשמה לאתר</h2>
+            <form>
+                <label for="full-name">שם מלא:</label>
+                <input type="text" id="full-name" name="full-name">
+                <label for="phone-number">מספר טלפון:</label>
+                <input type="text" id="phone-number" name="phone-number">
+                <label for="address">כתובת:</label>
+                <input type="text" id="address" name="address">
+                <label for="email">כתובת אימייל:</label>
+                <input type="email" id="email" name="email">
+                <button type="submit" class="register-button">הרשם</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="sideBox" class="side-box">
+        <span class="close" onclick="closeMySite()">&times;</span>
+        <p>אתר התכשיטים שלי</p>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function openMySite() {
+            document.getElementById("sideBox").style.display = "block";
+        }
+
+        function closeMySite() {
+            document.getElementById("sideBox").style.display = "none";
+        }
+
+        function selectItem(button) {
+            let row = button.parentElement.getAttribute("data-row");
+            let buttons = document.querySelectorAll(`.image-container[data-row='${row}'] button`);
+            buttons.forEach(btn => btn.classList.remove("selected"));
+            button.classList.add("selected");
+        }
+
+        function goToSecondPage() {
+            window.location.href = "file:///C:/Users/Myran%20elgrabli/Desktop/דף%20שני%20לאתר.html"; // שינוי לכתובת הדף הנכון
+        }
+    </script>
+</body>
+</html>
