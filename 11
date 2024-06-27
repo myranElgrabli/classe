@@ -21,11 +21,11 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            padding: 5px 20px; /* צמצום הרווחים */
+            padding: 10px 20px; /* התאמת הרווחים */
         }
         h1 {
             color: white; /* צבע לבן */
-            font-size: 2em; /* הקטנת גודל הפונט */
+            font-size: 2.5em; /* הגדלת גודל הפונט */
             text-align: center;
             font-family: 'David', Arial, sans-serif; /* שינוי סוג הגופן לדוד */
             margin: 0; /* ביטול המרווח */
@@ -40,7 +40,7 @@
             display: flex;
             justify-content: space-around;
             width: 80%;
-            margin: 5px 0; /* צמצום הרווחים מעל ומתחת */
+            margin: 10px 0; /* התאמת הרווחים מעל ומתחת */
             flex-shrink: 0; /* כדי שהתמונות לא יצטמצמו */
         }
         .image-container button {
@@ -53,22 +53,22 @@
             position: relative;
         }
         .image-container img {
-            width: 80px; /* הקטנת גודל התמונות */
+            width: 120px; /* הגדלת גודל התמונות */
             height: auto;
-            margin: 0 5px; /* הקטנת המרווחים בין התמונות */
+            margin: 0 10px; /* התאמת המרווחים בין התמונות */
         }
         .image-container p {
-            font-size: 1em; /* הקטנת גודל הטקסט */
+            font-size: 1.5em; /* הגדלת גודל הטקסט */
             color: white;
             font-family: 'David', Arial, sans-serif;
-            margin: 5px 0 0; /* מרווח קטן מעל התיאור */
+            margin: 10px 0 0; /* מרווח קטן מעל התיאור */
         }
         .selected img, .order-button:focus, .register-button:focus, .my-site-button:focus {
             border: 2px solid white; /* ריבוע לבן מסביב לבחירה */
         }
         .order-button, .register-button, .my-site-button {
-            padding: 5px 10px; /* הקטנת הרווחים בתוך הכפתור */
-            font-size: 1em; /* הקטנת גודל הפונט */
+            padding: 10px 20px; /* התאמת הרווחים בתוך הכפתור */
+            font-size: 1.5em; /* הגדלת גודל הפונט */
             background-color: #FFB6C1; /* צבע רקע ורוד כהה */
             color: black; /* צבע טקסט שחור */
             border: none;
@@ -76,9 +76,11 @@
             cursor: pointer;
             outline: none; /* הסרת קו מתאר ברירת מחדל */
             margin-top: 10px;
+            width: 200px; /* גודל כפתור אחיד */
+            text-align: center; /* יישור טקסט למרכז */
         }
         .register-button {
-            font-size: 0.8em; /* גודל טקסט קטן יותר */
+            font-size: 1.5em; /* גודל טקסט תואם */
         }
         .order-button {
             margin-top: 10px; /* מרווח מעל הכפתור */
@@ -99,9 +101,9 @@
         .modal-content {
             background-color: #fefefe;
             margin: auto;
-            padding: 20px;
+            padding: 30px;
             border: 1px solid #888;
-            width: 25%; /* רבע מהמסך */
+            width: 30%; /* רוחב המודאל */
             text-align: center;
         }
         .modal-content label {
@@ -109,11 +111,12 @@
             margin-top: 10px;
             font-family: 'David', Arial, sans-serif;
             color: black; /* צבע תווית שחור */
+            font-size: 1.2em; /* גודל תווית */
         }
         .modal-content input {
             width: calc(100% - 20px); /* התאמת רוחב */
-            padding: 5px;
-            margin-top: 5px;
+            padding: 10px;
+            margin-top: 10px;
         }
         .close {
             color: #aaa;
@@ -132,8 +135,8 @@
             position: fixed;
             top: 80px; /* הורדת המלבן נמוך יותר */
             right: 20px;
-            width: 250px;
-            padding: 10px;
+            width: 300px; /* רוחב צד הקופסא */
+            padding: 20px; /* התאמת הרווחים */
             background-color: rgba(255, 255, 255, 0.8); /* צבע רקע לבן עם שקיפות */
             color: black;
             border: 2px solid #888;
@@ -152,12 +155,13 @@
         .side-box .close:focus {
             color: black;
             text-decoration: none;
-            cursor: pointer;
+            cursor: pointer.
         }
         .side-box p {
             margin-right: 10px;
             position: relative;
             z-index: 2; /* כדי לוודא שהטקסט מעל הרקע */
+            font-size: 1.2em; /* גודל טקסט תואם */
         }
     </style>
 </head>
@@ -199,88 +203,69 @@
     </div>
     <div class="image-container" data-row="3">
         <button onclick="selectItem(this)">
-            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D.jpg" alt="פנינים">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%20%D7%96%D7%99%D7%A8%D7%A7%D7%95%D7%A0%D7%99%D7%9D.jpg" alt="זירקונים">
+            <p>זירקונים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D.jpg" alt="פנינים">
             <p>פנינים</p>
         </button>
         <button onclick="selectItem(this)">
-            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A8%D7%97%D7%99%D7%9D.jpg" alt="פרחים">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%A4%D7%A8%D7%97%D7%99%D7%9D.jpg" alt="פרחים">
             <p>פרחים</p>
         </button>
-        <button onclick="selectItem(this)">
-            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A7%D7%A8%D7%99%D7%A1%D7%98%D7%9C%D7%99%D7%9D.jpg" alt="קריסטלים">
-            <p>קריסטלים</p>
-        </button>
     </div>
-    <button class="order-button" onclick="goToSummaryPage()">סכם הזמנה</button>
-    <a href="דף שני לאתר.HTML" id="orderLink" style="display: none;"></a>
+    <button class="order-button" onclick="goToSecondPage()">ההזמנה שלך</button>
 
-    <div id="registerModal" class="modal">
+    <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>אתר התכשיטים שלי</h2>
+            <h2>הרשמה לאתר</h2>
             <form>
-                <label for="fname">שם פרטי</label>
-                <input type="text" id="fname" name="fname" required>
-                <label for="lname">שם משפחה</label>
-                <input type="text" id="lname" name="lname" required>
-                <label for="email">אימייל</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">הירשם</button>
+                <label for="full-name">שם מלא:</label>
+                <input type="text" id="full-name" name="full-name">
+                <label for="phone-number">מספר טלפון:</label>
+                <input type="text" id="phone-number" name="phone-number">
+                <label for="address">כתובת:</label>
+                <input type="text" id="address" name="address">
+                <label for="email">כתובת אימייל:</label>
+                <input type="email" id="email" name="email">
+                <button type="submit" class="register-button">הרשם</button>
             </form>
         </div>
     </div>
 
-    <div id="mySiteBox" class="side-box">
+    <div id="sideBox" class="side-box">
         <span class="close" onclick="closeMySite()">&times;</span>
-        <p>תודה שהזמנתם אצלינו<br>אנו מאוד מקווים שתהנו מהרכישה</p>
+        <p>אתר התכשיטים שלי</p>
     </div>
 
     <script>
-        let selectedItems = [];
-
-        function selectItem(button) {
-            const selected = button.querySelector('p').textContent;
-            const imageContainer = button.closest('.image-container');
-            const rowNumber = imageContainer.getAttribute('data-row');
-
-            // Remove previous selection in the same row
-            const buttons = imageContainer.querySelectorAll('button');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-
-            // Add new selection
-            button.classList.add('selected');
-            selectedItems[rowNumber - 1] = selected;
-        }
-
         function openModal() {
-            document.getElementById('registerModal').style.display = 'flex';
+            document.getElementById("myModal").style.display = "flex";
         }
 
         function closeModal() {
-            document.getElementById('registerModal').style.display = 'none';
+            document.getElementById("myModal").style.display = "none";
         }
 
         function openMySite() {
-            document.getElementById('mySiteBox').style.display = 'block';
+            document.getElementById("sideBox").style.display = "block";
         }
 
         function closeMySite() {
-            document.getElementById('mySiteBox').style.display = 'none';
+            document.getElementById("sideBox").style.display = "none";
         }
 
-        function goToSummaryPage() {
-            // Check if all selections are made
-            if (selectedItems.length < 3 || selectedItems.includes(undefined)) {
-                alert('אנא בחרו את כל הפריטים לפני המשך');
-                return;
-            }
+        function selectItem(button) {
+            let row = button.parentElement.getAttribute("data-row");
+            let buttons = document.querySelectorAll(`.image-container[data-row='${row}'] button`);
+            buttons.forEach(btn => btn.classList.remove("selected"));
+            button.classList.add("selected");
+        }
 
-            // Construct the order summary string
-            const orderSummary = selectedItems.join(' ');
-            localStorage.setItem('orderSummary', orderSummary);
-
-            // Redirect to the second page
-            document.getElementById('orderLink').click();
+        function goToSecondPage() {
+            window.location.href = "file:///C:/Users/Myran%20elgrabli/Desktop/דף%20שני%20לאתר.html"; // שינוי לכתובת הדף הנכון
         }
     </script>
 </body>
