@@ -51,6 +51,7 @@
         .payment-option {
             margin-top: 10px;
             font-size: 1.2em;
+            cursor: pointer;
         }
 
         .payment-option img {
@@ -59,16 +60,16 @@
             height: 24px; /* גודל התמונה גדול יותר מהכתב */
         }
 
-        .hidden {
-            display: none;
-        }
-
         .card-fields input {
             display: block;
             margin-top: 10px;
             padding: 5px;
             width: 100%;
             box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -79,7 +80,7 @@
             <p class="payment-option">התכשיט שבחרת:</p>
             <p class="payment-option">בחר אמצעי תשלום-</p>
             <p class="payment-option" id="credit-card-option">אשראי</p>
-            <p class="payment-option hidden" id="paypal-option">
+            <p class="payment-option" id="paypal-option">
                 <a href="https://www.paypal.com/il/home" target="_blank">PayPal
                 <img src="C:/Users/Myran elgrabli/Desktop/תמונה פייפאל.jpg" alt="PayPal"></a>
             </p>
@@ -102,6 +103,11 @@
 
         creditCardOption.addEventListener('click', () => {
             paypalOption.classList.toggle('hidden');
+            cardFields.classList.toggle('hidden');
+        });
+
+        paypalOption.addEventListener('click', () => {
+            creditCardOption.classList.toggle('hidden');
             cardFields.classList.toggle('hidden');
         });
     </script>
