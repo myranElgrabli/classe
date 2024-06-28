@@ -12,22 +12,27 @@
             text-align: right;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            width: 85%;
+            height: 85%;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
+            border-radius: 10px;
+            position: relative;
         }
 
         .title {
             font-size: 2em;
             margin-bottom: 20px;
-            text-align: center;
             color: #fff; /* צבע טקסט לבן */
+            text-align: center;
         }
 
         .order-details {
@@ -35,14 +40,70 @@
             line-height: 1.5;
             color: #000; /* צבע טקסט שחור */
         }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .payment-option {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .payment-option img {
+            vertical-align: middle;
+            margin-left: 10px;
+            height: 24px; /* גודל התמונה גדול יותר מהכתב */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .card-fields input {
+            display: block;
+            margin-top: 10px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <h1>פרטי ההזמנה</h1>
+            <p class="payment-option">התכשיט שבחרת:</p>
+            <p class="payment-option">בחר אמצעי תשלום-</p>
+            <p class="payment-option" id="credit-card-option">אשראי</p>
+            <p class="payment-option hidden" id="paypal-option">
+                <a href="https://www.paypal.com/il/home" target="_blank">PayPal
+                <img src="C:/Users/Myran elgrabli/Desktop/תמונה פייפאל.jpg" alt="PayPal"></a>
+            </p>
+            <div class="card-fields hidden" id="card-fields">
+                <input type="text" placeholder="מספר כרטיס">
+                <input type="text" placeholder="תוקף">
+                <input type="text" placeholder="CVV">
+            </div>
+        </div>
         <h1 class="title">ההזמנה שלך</h1>
         <div class="order-details">
             <!-- פרטים על ההזמנה יהיו כאן -->
         </div>
     </div>
+
+    <script>
+        const creditCardOption = document.getElementById('credit-card-option');
+        const paypalOption = document.getElementById('paypal-option');
+        const cardFields = document.getElementById('card-fields');
+
+        creditCardOption.addEventListener('click', () => {
+            paypalOption.classList.toggle('hidden');
+            cardFields.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
