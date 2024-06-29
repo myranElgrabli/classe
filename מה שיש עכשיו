@@ -208,7 +208,7 @@
         </button>
         <button onclick="selectItem(this)">
             <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A7%D7%A8%D7%99%D7%A1%D7%98%D7%9C%D7%99%D7%9D.jpg" alt="קריסטלים">
-            <p>קריסטלים</p>
+            <p>זירקונים</p>
         </button>
     </div>
     <button class="order-button" onclick="goToSummaryPage()">סכם הזמנה</button>
@@ -219,9 +219,11 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>אתר התכשיטים שלי</h2>
             <form>
-                <label for="fname">שם פרטי</label>
+                <label for="fname">שם מלא</label>
                 <input type="text" id="fname" name="fname" required>
-                <label for="lname">שם משפחה</label>
+                <label for="fname">מספר טלפון</label>
+                <input type="text" id="fname" name="fname" required>
+                <label for="lname">כתובת</label>
                 <input type="text" id="lname" name="lname" required>
                 <label for="email">אימייל</label>
                 <input type="email" id="email" name="email" required>
