@@ -207,7 +207,7 @@
             <p>פרחים</p>
         </button>
         <button onclick="selectItem(this)">
-            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A7%D7%A8%D7%99%D7%A1%D7%98%D7%9C%D7%99%D7%9D.jpg" alt="קריסטלים">
+            <img src="C:\Users\Myran elgrabli\Desktop\תמונה שנייה יהלומים.jfif" alt="זירקונים">
             <p>זירקונים</p>
         </button>
     </div>
