@@ -25,7 +25,7 @@
         }
         h1 {
             color: white; /* צבע לבן */
-            font-size: 2.5em; /* הקטנת גודל הפונט */
+            font-size: 3.5em; /* הקטנת גודל הפונט */
             text-align: center;
             font-family: 'David', Arial, sans-serif; /* שינוי סוג הגופן לדוד */
             margin: 0; /* ביטול המרווח */
@@ -136,10 +136,11 @@
             padding: 10px;
             background-color: rgba(255, 255, 255, 0.8); /* צבע רקע לבן עם שקיפות */
             color: black;
+  font-weight: bold;  
             border: 2px solid #888;
             z-index: 2;
             direction: rtl; /* טקסט מימין לשמאל */
-            background-image: url('file:///C:/Users/Myran%20elgrabli/Desktop/תמונת%20רקע%20לכפתור.jpg'); /* הוספת תמונת רקע */
+            background-image: url('C:\Users\Myran elgrabli\Desktop\תמונת רקע 2.jfif'); /* הוספת תמונת רקע */
             background-size: cover; /* כיסוי מלא של הרקע */
         }
         .side-box .close {
