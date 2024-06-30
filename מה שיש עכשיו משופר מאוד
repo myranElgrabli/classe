@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myran Jewelry</title>
+    <style>
+        body {
+            background-color: #FFE4E1; /* צבע רקע חדש */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* הסתרת גלילה */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 5px 20px; /* צמצום הרווחים */
+        }
+        h1 {
+            color: white; /* צבע לבן */
+            font-size: 2em; /* הקטנת גודל הפונט */
+            text-align: center;
+            font-family: 'David', Arial, sans-serif; /* שינוי סוג הגופן לדוד */
+            margin: 0; /* ביטול המרווח */
+            flex-grow: 1;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin: 5px 0; /* צמצום הרווחים מעל ומתחת */
+            flex-shrink: 0; /* כדי שהתמונות לא יצטמצמו */
+        }
+        .image-container button {
+            background: none;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            position: relative;
+        }
+        .image-container img {
+            width: 80px; /* הקטנת גודל התמונות */
+            height: auto;
+            margin: 0 5px; /* הקטנת המרווחים בין התמונות */
+        }
+        .image-container p {
+            font-size: 1em; /* הקטנת גודל הטקסט */
+            color: white;
+            font-family: 'David', Arial, sans-serif;
+            margin: 5px 0 0; /* מרווח קטן מעל התיאור */
+        }
+        .selected img, .order-button:focus, .register-button:focus, .my-site-button:focus {
+            border: 2px solid white; /* ריבוע לבן מסביב לבחירה */
+        }
+        .order-button, .register-button, .my-site-button {
+            padding: 5px 10px; /* הקטנת הרווחים בתוך הכפתור */
+            font-size: 1em; /* הקטנת גודל הפונט */
+            background-color: #FFB6C1; /* צבע רקע ורוד כהה */
+            color: black; /* צבע טקסט שחור */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none; /* הסרת קו מתאר ברירת מחדל */
+            margin-top: 10px;
+        }
+        .register-button {
+            font-size: 0.8em; /* גודל טקסט קטן יותר */
+        }
+        .order-button {
+            margin-top: 10px; /* מרווח מעל הכפתור */
+        }
+        .modal {
+            display: none; /* מוסתר כברירת מחדל */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* רקע שקוף */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 25%; /* רבע מהמסך */
+            text-align: center;
+        }
+        .modal-content label {
+            display: block;
+            margin-top: 10px;
+            font-family: 'David', Arial, sans-serif;
+            color: black; /* צבע תווית שחור */
+        }
+        .modal-content input {
+            width: calc(100% - 20px); /* התאמת רוחב */
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .side-box {
+            display: none;
+            position: fixed;
+            top: 80px; /* הורדת המלבן נמוך יותר */
+            right: 20px;
+            width: 250px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* צבע רקע לבן עם שקיפות */
+            color: black;
+            border: 2px solid #888;
+            z-index: 2;
+            direction: rtl; /* טקסט מימין לשמאל */
+            background-image: url('file:///C:/Users/Myran%20elgrabli/Desktop/תמונת%20רקע%20לכפתור.jpg'); /* הוספת תמונת רקע */
+            background-size: cover; /* כיסוי מלא של הרקע */
+        }
+        .side-box .close {
+            color: #aaa;
+            float: left;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .side-box .close:hover,
+        .side-box .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .side-box p {
+            margin-right: 10px;
+            position: relative;
+            z-index: 2; /* כדי לוודא שהטקסט מעל הרקע */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Myran Jewelry</h1>
+        <div class="buttons-container">
+            <button class="register-button" onclick="openModal()">הירשם לאתר</button>
+            <button class="my-site-button" onclick="openMySite()">האתר שלי</button>
+        </div>
+    </header>
+    <div class="image-container" data-row="1">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%A8%D7%95%D7%96%20%D7%92%D7%95%D7%9C%D7%93.jpg" alt="תכשיטי רוז גולד">
+            <p>תכשיטי רוז גולד</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%96%D7%94%D7%91.jpg" alt="תכשיטי זהב">
+            <p>תכשיטי זהב</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9B%D7%A9%D7%99%D7%98%D7%99%20%D7%9B%D7%A1%D7%A3.jpg" alt="תכשיטי כסף">
+            <p>תכשיטי כסף</p>
+        </button>
+    </div>
+    <div class="image-container" data-row="2">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A9%D7%A8%D7%A9%D7%A8%D7%90%D7%95%D7%AA.jpg" alt="שרשראות">
+            <p>שרשראות</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A2%D7%92%D7%99%D7%9C%D7%99%D7%9D.jpg" alt="עגילים">
+            <p>עגילים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%98%D7%91%D7%A2%D7%95%D7%AA.jpg" alt="טבעות">
+            <p>טבעות</p>
+        </button>
+    </div>
+    <div class="image-container" data-row="3">
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D.jpg" alt="פנינים">
+            <p>פנינים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="file:///C:/Users/Myran%20elgrabli/Desktop/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%A4%D7%A8%D7%97%D7%99%D7%9D.jpg" alt="פרחים">
+            <p>פרחים</p>
+        </button>
+        <button onclick="selectItem(this)">
+            <img src="C:\Users\Myran elgrabli\Desktop\תמונה שנייה יהלומים.jfif" alt="זירקונים">
+            <p>זירקונים</p>
+        </button>
+    </div>
+    <button class="order-button" onclick="goToSummaryPage()">סכם הזמנה</button>
+    <a href="דף שני לאתר.HTML" id="orderLink" style="display: none;"></a>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>אתר התכשיטים שלי</h2>
+            <form>
+                <label for="fname">שם מלא</label>
+                <input type="text" id="fname" name="fname" required>
+                <label for="fname">מספר טלפון</label>
+                <input type="text" id="fname" name="fname" required>
+                <label for="lname">כתובת</label>
+                <input type="text" id="lname" name="lname" required>
+                <label for="email">אימייל</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">הירשם</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mySiteBox" class="side-box">
+        <span class="close" onclick="closeMySite()">&times;</span>
+        <p>אודות האתר</p>
+        <p>באתר שלי כל התכשיטים נוצרים בעבודת יד ובאהבה רבה, אבל החלק הכי טוב הוא שתוכלו לעצב לעצמכם את התכשיטים שהכי מתאימים לכם!</p> 
+        <p>מהחומר ועד לצורה והעיצוב, מה שעליכם לעשות זה לבחור בשורה הראשונה את החומר של התכשיט, בשורה השנייה איזה תכשיט תרצו ובשורה השלישית איזה עיצוב תרצו על התכשיט. </p> 
+        <p>כשסיימתם לעצב את התכשיט לחצו על הכפתור ״ סכם הזמנה ״, לאחר מכן בדף הבא תסיימו את ההזמנה והתכשיט אצליכם בבית תוך שלושה ימי עסקים!</p> 
+    </div>
+
+    <script>
+        let selectedItems = [];
+
+        function selectItem(button) {
+            const selected = button.querySelector('p').textContent;
+            const imageContainer = button.closest('.image-container');
+            const rowNumber = imageContainer.getAttribute('data-row');
+
+            // Remove previous selection in the same row
+            const buttons = imageContainer.querySelectorAll('button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+
+            // Add new selection
+            button.classList.add('selected');
+            selectedItems[rowNumber - 1] = selected;
+        }
+
+        function openModal() {
+            document.getElementById('registerModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('registerModal').style.display = 'none';
+        }
+
+        function openMySite() {
+            document.getElementById('mySiteBox').style.display = 'block';
+        }
+
+        function closeMySite() {
+            document.getElementById('mySiteBox').style.display = 'none';
+        }
+
+        function goToSummaryPage() {
+            // Check if all selections are made
+            if (selectedItems.length < 3 || selectedItems.includes(undefined)) {
+                alert('אנא בחרו את כל הפריטים לפני המשך');
+                return;
+            }
+
+            // Construct the order summary string
+            const orderSummary = selectedItems.join(' ');
+            localStorage.setItem('orderSummary', orderSummary);
+
+            // Redirect to the second page
+            document.getElementById('orderLink').click();
+        }
+    </script>
+</body>
+</html>
