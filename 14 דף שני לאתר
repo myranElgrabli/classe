@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סיכום הזמנה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE4E1;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 85%;
+            height: 85%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .order-details {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #000;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .payment-option {
+            margin-top: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .payment-option img {
+            vertical-align: middle;
+            margin-left: 10px;
+            height: 24px;
+        }
+
+        .card-fields input {
+            display: block;
+            margin-top: 10px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>פרטי ההזמנה</h1>
+            <p class="payment-option">התכשיט שבחרת:</p>
+            <p class="payment-option">בחר אמצעי תשלום-</p>
+            <p class="payment-option" id="credit-card-option">אשראי</p>
+            <p class="payment-option" id="paypal-option">
+                <a href="https://www.paypal.com/il/home" target="_blank">PayPal
+                <img src="C:/Users/Myran elgrabli/Desktop/תמונה פייפאל.jpg" alt="PayPal"></a>
+            </p>
+            <div class="card-fields hidden" id="card-fields">
+                <input type="text" maxlength="16" placeholder="מספר כרטיס">
+                <input type="text" maxlength="5" placeholder="תוקף (MM/YY)">
+                <input type="text" maxlength="3" placeholder="CVV">
+                <button onclick="validateCreditCard()">שלם</button>
+            </div>
+            <div class="success-message" id="success-message">
+                <p>תודה שקניתם אצלינו!</p>
+            </div>
+            <div class="error-message" id="error-message">
+                <p>פרטי אשראי לא נכונים, אנא נסו שוב.</p>
+            </div>
+        </div>
+        <h1 class="title">ההזמנה שלך</h1>
+        <div class="order-details">
+            <!-- פרטים על ההזמנה יהיו כאן -->
+        </div>
+    </div>
+
+    <script>
+        function validateCreditCard() {
+            const cardNumberInput = document.querySelector('#card-fields input:nth-of-type(1)').value.trim();
+            const expirationInput = document.querySelector('#card-fields input:nth-of-type(2)').value.trim();
+            const cvvInput = document.querySelector('#card-fields input:nth-of-type(3)').value.trim();
+
+            const validCardNumber = "1234567890123456";
+            const validExpiration = "12/29";
+            const validCVV = "123";
+
+            if (cardNumberInput === validCardNumber &&
+                expirationInput === validExpiration &&
+                cvvInput === validCVV) {
+                showSuccessMessage();
+            } else {
+                showErrorMessage();
+            }
+        }
+
+        function showSuccessMessage() {
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        function showErrorMessage() {
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.style.display = 'block';
+        }
+
+        const creditCardOption = document.getElementById('credit-card-option');
+        const paypalOption = document.getElementById('paypal-option');
+        const cardFields = document.getElementById('card-fields');
+
+        creditCardOption.addEventListener('click', () => {
+            paypalOption.classList.toggle('hidden');
+            cardFields.classList.toggle('hidden');
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('error-message').style.display = 'none';
+        });
+
+        paypalOption.addEventListener('click', () => {
+            creditCardOption.classList.toggle('hidden');
+            cardFields.classList.toggle('hidden');
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('error-message').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
