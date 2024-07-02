@@ -116,7 +116,7 @@
                 <button onclick="validateCreditCard()">שלם</button>
             </div>
             <div class="success-message" id="success-message">
-                <p>תודה שקניתם אצלינו!</p>
+                <p>.תודה שקניתם אצלינו! תישלח אליכם הודעה במייל ברגע שההזמנה תגיע לנקודת האיסוף הקרובה ביותר לכתובת שהזנתם</p>
             </div>
             <div class="error-message" id="error-message">
                 <p>פרטי אשראי לא נכונים, אנא נסו שוב.</p>
