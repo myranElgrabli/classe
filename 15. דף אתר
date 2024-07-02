@@ -110,13 +110,13 @@
                 <img src="C:/Users/Myran elgrabli/Desktop/תמונה פייפאל.jpg" alt="PayPal"></a>
             </p>
             <div class="card-fields hidden" id="card-fields">
-                <input type="text" maxlength="16" placeholder="מספר כרטיס" oninput="validateNumberInput(this)">
+                <input type="text" maxlength="16" placeholder="מספר כרטיס" oninput="validateCardNumberInput(this)">
                 <input type="text" maxlength="5" placeholder="תוקף (MM/YY)" oninput="validateExpirationInput(this)">
-                <input type="text" maxlength="3" placeholder="CVV" oninput="validateNumberInput(this)">
+                <input type="text" maxlength="3" placeholder="CVV" oninput="validateCVVInput(this)">
                 <button onclick="validateCreditCard()">שלם</button>
             </div>
             <div class="success-message" id="success-message">
-                <p>.תודה שקניתם אצלינו! תישלח אליכם הודעה במייל ברגע שההזמנה תגיע לנקודת האיסוף הקרובה ביותר לכתובת שהזנתם</p>
+                <p>תודה שקניתם אצלינו! תישלח אליכם הודעה במייל ברגע שההזמנה תגיע לנקודת האיסוף הקרובה ביותר לכתובת שהזנתם.</p>
             </div>
             <div class="error-message" id="error-message">
                 <p>פרטי אשראי לא נכונים, אנא נסו שוב.</p>
@@ -136,12 +136,16 @@
 
         document.getElementById('amount').innerText = getRandomAmount();
 
-        function validateNumberInput(input) {
+        function validateCardNumberInput(input) {
             input.value = input.value.replace(/[^0-9]/g, '');
         }
 
         function validateExpirationInput(input) {
-            input.value = input.value.replace(/[^0-9\/\\]/g, '');
+            input.value = input.value.replace(/[^0-9/\\]/g, '');
+        }
+
+        function validateCVVInput(input) {
+            input.value = input.value.replace(/[^0-9]/g, '');
         }
 
         function validateCreditCard() {
@@ -164,7 +168,10 @@
 
         function showSuccessMessage() {
             const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
             successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+
             setTimeout(function() {
                 successMessage.style.display = 'none';
             }, 3000);
@@ -172,7 +179,9 @@
 
         function showErrorMessage() {
             const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
             errorMessage.style.display = 'block';
+            successMessage.style.display = 'none';
         }
 
         const creditCardOption = document.getElementById('credit-card-option');
