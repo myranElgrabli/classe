@@ -102,7 +102,7 @@
     <div class="container">
         <div class="header">
             <h1>פרטי ההזמנה</h1>
-            <p class="payment-option">סכום לתשלום:</p>
+            <p class="payment-option">סכום לתשלום: <span id="amount"></span> ש"ח</p>
             <p class="payment-option">בחר אמצעי תשלום-</p>
             <p class="payment-option" id="credit-card-option">אשראי</p>
             <p class="payment-option" id="paypal-option">
@@ -110,9 +110,9 @@
                 <img src="C:/Users/Myran elgrabli/Desktop/תמונה פייפאל.jpg" alt="PayPal"></a>
             </p>
             <div class="card-fields hidden" id="card-fields">
-                <input type="text" maxlength="16" placeholder="מספר כרטיס">
-                <input type="text" maxlength="5" placeholder="תוקף (MM/YY)">
-                <input type="text" maxlength="3" placeholder="CVV">
+                <input type="text" maxlength="16" placeholder="מספר כרטיס" oninput="validateNumberInput(this)">
+                <input type="text" maxlength="5" placeholder="תוקף (MM/YY)" oninput="validateExpirationInput(this)">
+                <input type="text" maxlength="3" placeholder="CVV" oninput="validateNumberInput(this)">
                 <button onclick="validateCreditCard()">שלם</button>
             </div>
             <div class="success-message" id="success-message">
@@ -129,17 +129,32 @@
     </div>
 
     <script>
+        function getRandomAmount() {
+            const amounts = [389, 299, 450];
+            return amounts[Math.floor(Math.random() * amounts.length)];
+        }
+
+        document.getElementById('amount').innerText = getRandomAmount();
+
+        function validateNumberInput(input) {
+            input.value = input.value.replace(/[^0-9]/g, '');
+        }
+
+        function validateExpirationInput(input) {
+            input.value = input.value.replace(/[^0-9\/\\]/g, '');
+        }
+
         function validateCreditCard() {
             const cardNumberInput = document.querySelector('#card-fields input:nth-of-type(1)').value.trim();
             const expirationInput = document.querySelector('#card-fields input:nth-of-type(2)').value.trim();
             const cvvInput = document.querySelector('#card-fields input:nth-of-type(3)').value.trim();
 
             const validCardNumber = "1234567890123456";
-            const validExpiration = "12/29";
+            const validExpirationOptions = ["12/29", "12\\29"];
             const validCVV = "123";
 
             if (cardNumberInput === validCardNumber &&
-                expirationInput === validExpiration &&
+                validExpirationOptions.includes(expirationInput) &&
                 cvvInput === validCVV) {
                 showSuccessMessage();
             } else {
