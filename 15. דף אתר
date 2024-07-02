@@ -201,6 +201,18 @@
             document.getElementById('success-message').style.display = 'none';
             document.getElementById('error-message').style.display = 'none';
         });
+
+        // Check if returning from PayPal link
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paypalReturn = urlParams.get('paypalReturn');
+
+            if (paypalReturn === 'true') {
+                paypalOption.classList.remove('hidden');
+                creditCardOption.classList.remove('hidden');
+                cardFields.classList.add('hidden');
+            }
+        };
     </script>
 </body>
 </html>
