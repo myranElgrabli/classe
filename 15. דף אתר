@@ -153,13 +153,13 @@
             const expirationInput = document.querySelector('#card-fields input:nth-of-type(2)').value.trim();
             const cvvInput = document.querySelector('#card-fields input:nth-of-type(3)').value.trim();
 
-            const validCardNumber = "1234567890123456";
-            const validExpirationOptions = ["12/29", "12\\29"];
-            const validCVV = "123";
+            const validCardNumbers = ["1234567890123456", "2234567890123456"];
+            const validExpirationOptions = ["12/29", "12\\29", "10/29", "10\\29"];
+            const validCVVs = ["123", "223"];
 
-            if (cardNumberInput === validCardNumber &&
+            if (validCardNumbers.includes(cardNumberInput) &&
                 validExpirationOptions.includes(expirationInput) &&
-                cvvInput === validCVV) {
+                validCVVs.includes(cvvInput)) {
                 showSuccessMessage();
             } else {
                 showErrorMessage();
